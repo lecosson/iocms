@@ -6,9 +6,8 @@
  * Time: 6:50
  */
 
-use \iocms\utils\Heart;
-
-
+use \iocms\bus\EventBus;
+use \iocms\bus\CoreEvents;
 
 // classes
 spl_autoload_register(function ($class_name) {
@@ -49,3 +48,7 @@ spl_autoload_register(function ($class_name) {
 //echo "<pre>";
 //print_r($filePath);
 //die();
+
+// events
+EventBus::dispatch(CoreEvents::getInstance()->core_bootstrap_loaded);
+
