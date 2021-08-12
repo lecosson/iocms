@@ -20,7 +20,7 @@ class Router
         $res = [];
         if ($filePath && is_dir($filePath)){
             // attempt to find an index file
-            function getRendererName($rendererName) { return "index.$rendererName";};
+//            function getRendererName($rendererName) { return "index.$rendererName";};
             $availableRenderers = array_values(array_intersect(
                 Renderer::getRenderersPriority(),
                 Renderer::getRenderersNames()
@@ -28,7 +28,6 @@ class Router
 //            $renderers = array_map(function($rendererName) { return "index.$rendererName";}, $availableRenderers);
             foreach ($availableRenderers as $rname){
                 if ($indexFilePath = realpath($filePath . DIRECTORY_SEPARATOR . "index." . $rname)){
-
                     $res['renderer'] = $rname;
                     $res['path'] = $indexFilePath;
                     break;

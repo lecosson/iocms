@@ -22,26 +22,10 @@ const DBDIR = __DIR__;
 require_once ROOTDIR . '/vendor/autoload.php';
 require_once COREDIR . '/bootstrap.php';
 
+echo Core::getInstance()->getResponse()->renderPage();
 
-
-//use iocms\renderer\md\Renderer;
-//use iocms\renderer\txt\Renderer;
-
-//$renderer = Heart::getRenderersList()['md'];
-//echo $renderer::render(file_get_contents(Heart::getIndexPage()));
-$indexPage = Router::getIndexPage();
-//echo "<pre>";
-//print_r($indexPage);
-//print_r(Heart::getRenderersPriority());
-
-echo Renderer::render(file_get_contents($indexPage['path']), $indexPage['renderer']);
-
-Core::getInstance()->getResponse()->render();
-Core::getInstance()->getResponse()->getRendered();
-
-echo '<hr/>';
-
-echo '<hr/>';
-echo('<pre>');
+echo '<pre>';
+echo \iocms\renderer\md\Renderer::render("---\n# Core dump\n");
 print_r(\iocms\Core::getInstance());
+echo \iocms\renderer\md\Renderer::render("---\n# Events dump\n");
 print_r(\iocms\bus\EventBus::getEvents());

@@ -3,6 +3,8 @@
 namespace iocms\response;
 
 use iocms\interfaces\IResponse;
+use iocms\renderer\Renderer;
+use iocms\router\Router;
 
 class Response implements IResponse
 {
@@ -10,8 +12,6 @@ class Response implements IResponse
      * @var IResponse
      */
     private static $instance;
-
-    private $rendered = '';
 
     /**
      * Singleton instantiation
@@ -25,12 +25,10 @@ class Response implements IResponse
         return self::$instance;
     }
 
-    public function render() {
+    public function renderPage():string {
         //TODO: implement rendering (move from deprecated Heart class)
-    }
-
-    public function getRendered():string {
-        return $this->rendered;
+        $indexPage = Router::getIndexPage();
+        return Renderer::renderContent(file_get_contents($indexPage['path']), $indexPage['renderer']);
     }
 
 }

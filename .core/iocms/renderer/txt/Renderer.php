@@ -12,8 +12,8 @@ use iocms\interfaces\IRenderer;
 
 class Renderer implements IRenderer {
 
-    public static function render($source) {
-        return $source;
+    public static function render($content) {
+        return $content;
     }
 
 }

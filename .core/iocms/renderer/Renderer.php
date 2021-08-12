@@ -44,7 +44,7 @@ class Renderer
      * @param $rendererName
      * @return mixed
      */
-    public static function render($content, $rendererName) {
+    public static function renderContent($content, $rendererName) {
         $renderer = self::getRenderersList()[$rendererName];
         return $renderer::render($content);
     }
