@@ -6,10 +6,7 @@
  * Time: 5:55
  */
 
-//use iocms\utils\Heart;
 use iocms\Core;
-use iocms\router\Router;
-use iocms\renderer\Renderer;
 
 const ROOTDIR = __DIR__;
 const COREDIR = ROOTDIR . DIRECTORY_SEPARATOR . ".core";
@@ -24,6 +21,7 @@ require_once COREDIR . '/bootstrap.php';
 
 echo Core::getInstance()->getResponse()->renderPage();
 
+//TODO: remove test output
 echo '<pre>';
 echo \iocms\renderer\md\Renderer::render("---\n# Core dump\n");
 print_r(\iocms\Core::getInstance());
