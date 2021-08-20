@@ -1,6 +1,7 @@
 {
     "renderersPriority": [
         "txt",
-        "md"
+        "md",
+        "rtf"
     ]
 }

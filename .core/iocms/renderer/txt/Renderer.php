@@ -12,7 +12,7 @@ use iocms\interfaces\IRenderer;
 
 class Renderer implements IRenderer {
 
-    public static function render($content) {
+    public static function renderSource($content) {
         return $content;
     }
 

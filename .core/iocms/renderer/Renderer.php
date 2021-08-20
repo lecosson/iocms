@@ -11,7 +11,6 @@ class Renderer
      * @return array
      */
     public static function getRenderersPriority() {
-//        return self::getSettings()['renderersPriority'];
         return Core::getInstance()->getSettings()['renderersPriority'];
     }
 
@@ -46,6 +45,6 @@ class Renderer
      */
     public static function renderContent($content, $rendererName) {
         $renderer = self::getRenderersList()[$rendererName];
-        return $renderer::render($content);
+        return $renderer::renderSource($content);
     }
 }

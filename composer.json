@@ -1,5 +1,6 @@
 {
     "require": {
-        "league/commonmark": "^1.6"
+        "league/commonmark": "^1.6",
+        "phpoffice/phpword": "^0.18.2"
     }
 }

@@ -10,5 +10,5 @@ namespace iocms\interfaces;
 
 interface IRenderer
 {
-    public static function render($content);
+    public static function renderSource($content);
 }

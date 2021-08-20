@@ -23,7 +23,7 @@ echo Core::getInstance()->getResponse()->renderPage();
 
 //TODO: remove test output
 echo '<pre>';
-echo \iocms\renderer\md\Renderer::render("---\n# Core dump\n");
+echo \iocms\renderer\md\Renderer::renderSource("---\n# Core dump\n");
 print_r(\iocms\Core::getInstance());
-echo \iocms\renderer\md\Renderer::render("---\n# Events dump\n");
+echo \iocms\renderer\md\Renderer::renderSource("---\n# Events dump\n");
 print_r(\iocms\bus\EventBus::getEvents());

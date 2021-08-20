@@ -14,7 +14,7 @@ use League\CommonMark\CommonMarkConverter;
 
 class Renderer implements IRenderer {
 
-    public static function render($content):string {
+    public static function renderSource($content):string {
         $converter = new CommonMarkConverter();
         return $converter->convertToHtml($content);
     }
