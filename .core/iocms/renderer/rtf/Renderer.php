@@ -24,8 +24,11 @@ class Renderer implements IRenderer {
         $doc->read($phpWord);
 
         $writer = new HTML($phpWord);
-        return $writer->getContent();
-
+        return preg_replace( '/^<[^>]+>|<\/[^>]+>$/', '', // strip outer BODY tag
+            trim( // remove trailing line breaks
+                $writer->getWriterPart('Body')->write() // get text contet from RTF
+            )
+        );
     }
 
 }
